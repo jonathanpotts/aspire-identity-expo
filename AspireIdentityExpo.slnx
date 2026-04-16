@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="AspireIdentityExpo.ApiService/AspireIdentityExpo.ApiService.csproj" />
+  <Project Path="AspireIdentityExpo.AppHost/AspireIdentityExpo.AppHost.csproj" />
+  <Project Path="AspireIdentityExpo.ServiceDefaults/AspireIdentityExpo.ServiceDefaults.csproj" />
+</Solution>
