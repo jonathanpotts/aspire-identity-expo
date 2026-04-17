@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { router } from "expo-router";
+import { router, Stack } from "expo-router";
 import Head from "expo-router/head";
 import { useEffect } from "react";
 import { ScrollView, View } from "react-native";
@@ -43,6 +43,9 @@ export default function Setup2faScreen() {
       <Head>
         <title>Setup two-factor authentication</title>
       </Head>
+      <Stack.Screen
+        options={{ headerTitle: "Setup two-factor authentication" }}
+      />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

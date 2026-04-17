@@ -8,7 +8,6 @@ export default function ProtectedLayout() {
         screenOptions={{
           headerShadowVisible: false,
           headerBackButtonDisplayMode: "minimal",
-          title: "",
         }}
       />
     </>

@@ -1,3 +1,4 @@
+import { Stack } from "expo-router";
 import Head from "expo-router/head";
 import { ScrollView, View } from "react-native";
 import {
@@ -13,6 +14,7 @@ export default function ForgotPasswordSentScreen() {
       <Head>
         <title>Forgot password?</title>
       </Head>
+      <Stack.Screen options={{ headerTitle: "Forgot password?" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

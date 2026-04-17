@@ -65,7 +65,6 @@ export function RootNavigator() {
       screenOptions={{
         headerShadowVisible: false,
         headerBackButtonDisplayMode: "minimal",
-        title: "",
       }}
     >
       <Stack.Screen name="sign-in/index" />

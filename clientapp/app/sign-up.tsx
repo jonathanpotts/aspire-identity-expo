@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { Redirect, router } from "expo-router";
+import { Redirect, router, Stack } from "expo-router";
+import Head from "expo-router/head";
 import { ScrollView, View } from "react-native";
 import { SignUpForm } from "@/components/sign-up-form";
 import { useAuth } from "@/context/auth";
@@ -41,20 +42,26 @@ export default function SignUpScreen() {
   }
 
   return (
-    <ScrollView
-      keyboardShouldPersistTaps="handled"
-      contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"
-      keyboardDismissMode="interactive"
-    >
-      <View className="w-full max-w-sm">
-        <SignUpForm
-          onSubmit={mutate}
-          onSignIn={handleSignIn}
-          isPending={isPending}
-          isError={isError}
-          error={error?.message}
-        />
-      </View>
-    </ScrollView>
+    <>
+      <Head>
+        <title>Sign up</title>
+      </Head>
+      <Stack.Screen options={{ headerTitle: "Sign up" }} />
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"
+        keyboardDismissMode="interactive"
+      >
+        <View className="w-full max-w-sm">
+          <SignUpForm
+            onSubmit={mutate}
+            onSignIn={handleSignIn}
+            isPending={isPending}
+            isError={isError}
+            error={error?.message}
+          />
+        </View>
+      </ScrollView>
+    </>
   );
 }

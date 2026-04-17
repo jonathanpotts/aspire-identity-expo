@@ -1,4 +1,4 @@
-import { Redirect, router, useFocusEffect } from "expo-router";
+import { Redirect, router, Stack, useFocusEffect } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback } from "react";
 import { ScrollView, View } from "react-native";
@@ -31,6 +31,7 @@ export default function RecoveryCodesScreen() {
       <Head>
         <title>Recovery codes</title>
       </Head>
+      <Stack.Screen options={{ headerTitle: "Recovery codes" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

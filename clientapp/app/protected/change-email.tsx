@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { router } from "expo-router";
+import { router, Stack } from "expo-router";
 import Head from "expo-router/head";
 import { ScrollView, View } from "react-native";
 import { ChangeEmailForm } from "@/components/change-email-form";
@@ -28,6 +28,7 @@ export default function ChangeEmailScreen() {
       <Head>
         <title>Change email</title>
       </Head>
+      <Stack.Screen options={{ headerTitle: "Change email" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"
