@@ -64,7 +64,7 @@ export default function TwoFactorRecoveryCodeSignInScreen() {
       <Head>
         <title>Use a recovery code</title>
       </Head>
-      <Stack.Screen options={{ headerTitle: "Use a recovery code" }} />
+      <Stack.Screen options={{ title: "Use a recovery code" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

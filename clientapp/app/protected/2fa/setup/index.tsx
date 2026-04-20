@@ -43,9 +43,7 @@ export default function Setup2faScreen() {
       <Head>
         <title>Setup two-factor authentication</title>
       </Head>
-      <Stack.Screen
-        options={{ headerTitle: "Setup two-factor authentication" }}
-      />
+      <Stack.Screen options={{ title: "Setup two-factor authentication" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

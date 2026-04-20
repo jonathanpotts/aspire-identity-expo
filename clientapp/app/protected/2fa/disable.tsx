@@ -33,9 +33,7 @@ export default function DisableTwoFactorScreen() {
       <Head>
         <title>Disable two-factor authentication</title>
       </Head>
-      <Stack.Screen
-        options={{ headerTitle: "Disable two-factor authentication" }}
-      />
+      <Stack.Screen options={{ title: "Disable two-factor authentication" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

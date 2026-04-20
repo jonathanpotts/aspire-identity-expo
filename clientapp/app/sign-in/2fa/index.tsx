@@ -71,7 +71,7 @@ export default function TwoFactorSignInScreen() {
       <Head>
         <title>Two-factor authentication</title>
       </Head>
-      <Stack.Screen options={{ headerTitle: "Two-factor authentication" }} />
+      <Stack.Screen options={{ title: "Two-factor authentication" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

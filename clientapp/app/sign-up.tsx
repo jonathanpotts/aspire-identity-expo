@@ -46,7 +46,7 @@ export default function SignUpScreen() {
       <Head>
         <title>Sign up</title>
       </Head>
-      <Stack.Screen options={{ headerTitle: "Sign up" }} />
+      <Stack.Screen options={{ title: "Sign up" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

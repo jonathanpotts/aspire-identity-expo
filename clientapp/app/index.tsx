@@ -17,7 +17,7 @@ export default function HomeScreen() {
       <Head>
         <title>Home</title>
       </Head>
-      <Stack.Screen options={{ headerTitle: "Home" }} />
+      <Stack.Screen options={{ title: "Home" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"
