@@ -55,13 +55,13 @@ export function RootNavigator() {
         headerBackButtonDisplayMode: "minimal",
       }}
     >
-      <Stack.Screen name="sign-in/index" />
-      <Stack.Protected guard={isSignedIn}>
-        <Stack.Screen name="protected" />
-      </Stack.Protected>
       <Stack.Protected guard={!isSignedIn}>
+        <Stack.Screen name="index" />
         <Stack.Screen name="forgot-password/index" />
         <Stack.Screen name="forgot-password/sent" />
+      </Stack.Protected>
+      <Stack.Protected guard={isSignedIn}>
+        <Stack.Screen name="protected" />
       </Stack.Protected>
     </Stack>
   );
