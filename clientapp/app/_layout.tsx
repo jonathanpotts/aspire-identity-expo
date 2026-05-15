@@ -4,8 +4,8 @@ import { PortalHost } from "@rn-primitives/portal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SplashScreen, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useColorScheme } from "nativewind";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect } from "react";
+import { useUniwind } from "uniwind";
 import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider, useAuth } from "@/context/auth";
 import { NAV_THEME } from "@/lib/theme";
@@ -20,24 +20,13 @@ export {
 const queryClient = new QueryClient();
 
 export default function RootLayout() {
-  const { colorScheme } = useColorScheme();
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useLayoutEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  // Prevent rendering until after mount so NativeWind has resolved the
-  // system color scheme, avoiding a flash of the wrong theme on first paint.
-  if (!hasMounted) {
-    return null;
-  }
+  const { theme } = useUniwind();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider value={NAV_THEME[colorScheme ?? "light"]}>
+      <ThemeProvider value={NAV_THEME[theme]}>
         <AuthProvider>
-          <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
+          <StatusBar style={theme === "dark" ? "light" : "dark"} />
           <RootNavigator />
           <Toaster />
           <PortalHost />
@@ -63,7 +52,6 @@ export function RootNavigator() {
   return (
     <Stack
       screenOptions={{
-        headerShadowVisible: false,
         headerBackButtonDisplayMode: "minimal",
       }}
     >

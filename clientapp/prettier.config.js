@@ -10,7 +10,7 @@ const config = {
     "^@/(.*)$",
     "^[./]",
   ],
-  tailwindFunctions: ["cva"],
+  tailwindFunctions: ["useResolveClassNames", "cva"],
 };
 
 module.exports = config;

@@ -1,5 +1,5 @@
-import { useColorScheme } from "nativewind";
 import { Image, Platform, View } from "react-native";
+import { useUniwind } from "uniwind";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -7,22 +7,25 @@ const SOCIAL_CONNECTION_STRATEGIES = [
   {
     type: "oauth_apple",
     source: { uri: "https://img.clerk.com/static/apple.png?width=160" },
+    label: "Apple",
     useTint: true,
   },
   {
     type: "oauth_google",
     source: { uri: "https://img.clerk.com/static/google.png?width=160" },
+    label: "Google",
     useTint: false,
   },
   {
     type: "oauth_github",
     source: { uri: "https://img.clerk.com/static/github.png?width=160" },
+    label: "GitHub",
     useTint: true,
   },
 ];
 
 export function SocialConnections() {
-  const { colorScheme } = useColorScheme();
+  const { theme } = useUniwind();
 
   return (
     <View className="gap-2 sm:flex-row sm:gap-3">
@@ -44,12 +47,13 @@ export function SocialConnections() {
               )}
               tintColor={Platform.select({
                 native: strategy.useTint
-                  ? colorScheme === "dark"
+                  ? theme === "dark"
                     ? "white"
                     : "black"
                   : undefined,
               })}
               source={strategy.source}
+              aria-label={`Sign in with ${strategy.label}`}
             />
           </Button>
         );

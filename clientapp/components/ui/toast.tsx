@@ -47,7 +47,7 @@ function ToastTitle({
   return (
     <ToastPrimitive.Title
       className={cn(
-        "text-sm font-semibold leading-snug tracking-tight",
+        "text-sm leading-snug font-semibold tracking-tight",
         variant === "destructive"
           ? "text-destructive-foreground"
           : "text-foreground",

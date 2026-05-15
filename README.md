@@ -68,7 +68,8 @@ An Expo frontend supporting web, iOS, and Android that authenticates users via t
 **Uses:**
 
 - **[Expo](https://expo.dev/) + [Expo Router](https://docs.expo.dev/router/introduction/)** - Provides the [React Native](https://reactnative.dev/) app framework and file-based routing
-- **[NativeWind](https://www.nativewind.dev/)** - Applies [Tailwind CSS](https://tailwindcss.com/) styles to React Native components
+- **[Uniwind](https://uniwind.dev/)** - Applies [Tailwind CSS](https://tailwindcss.com/) styles to React Native components
+- **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)** - Provides smooth, performant animations and transitions
 - **[React Native Reusables](https://reactnativereusables.com/)** - Provides [shadcn/ui](https://ui.shadcn.com/)-inspired universal components for React Native
 - **[TanStack Query](https://tanstack.com/query/)** - Handles server state and data fetching
 - **[React Hook Form](https://react-hook-form.com/)** + **[Zod](https://zod.dev/)** - Manages form state and validation

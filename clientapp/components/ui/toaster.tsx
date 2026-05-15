@@ -76,11 +76,11 @@ function ToasterItem({
         className={cn(
           Platform.select({
             web: {
-              "duration-200 animate-in fade-in motion-reduce:animate-none":
+              "animate-in fade-in duration-200 motion-reduce:animate-none":
                 !exiting,
               "slide-in-from-top-4": !exiting && isTop,
               "slide-in-from-bottom-4": !exiting && !isTop,
-              "duration-150 animate-out fade-out fill-mode-forwards motion-reduce:animate-none":
+              "animate-out fade-out fill-mode-forwards duration-150 motion-reduce:animate-none":
                 exiting,
               "slide-out-to-top-4": exiting && isTop,
               "slide-out-to-bottom-4": exiting && !isTop,

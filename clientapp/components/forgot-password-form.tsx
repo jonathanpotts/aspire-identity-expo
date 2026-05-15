@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AlertCircleIcon, LoaderCircleIcon } from "lucide-react-native";
+import { AlertCircleIcon } from "lucide-react-native";
 import { Controller, useForm } from "react-hook-form";
 import { View } from "react-native";
 import * as z from "zod";
@@ -12,9 +12,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Spinner } from "@/components/ui/spinner";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
 
@@ -44,7 +44,7 @@ export function ForgotPasswordForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5">
+      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-start">
             Forgot password?
@@ -86,11 +86,7 @@ export function ForgotPasswordForm({
                     onSubmitEditing={handleSubmit(onSubmit)}
                     returnKeyType="send"
                     submitBehavior="submit"
-                    aria-invalid={invalid}
-                    className={cn({
-                      "!dark:ring-destructive/40 !border-destructive !ring-destructive/20":
-                        invalid,
-                    })}
+                    invalid={invalid}
                   />
                   <View
                     className={cn({
@@ -101,7 +97,7 @@ export function ForgotPasswordForm({
                       <Text
                         key={error.message}
                         role="alert"
-                        className="text-sm text-destructive"
+                        className="text-destructive text-sm"
                       >
                         {error.message}
                       </Text>
@@ -117,10 +113,7 @@ export function ForgotPasswordForm({
             >
               {isPending ? (
                 <View className="flex-row items-center justify-center gap-2">
-                  <Icon
-                    as={LoaderCircleIcon}
-                    className="origin-center animate-spin motion-reduce:animate-none"
-                  />
+                  <Spinner />
                   <Text>Sending reset email...</Text>
                 </View>
               ) : (

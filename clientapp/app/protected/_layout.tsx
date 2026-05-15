@@ -6,7 +6,6 @@ export default function ProtectedLayout() {
       <Stack.Screen options={{ headerShown: false }} />
       <Stack
         screenOptions={{
-          headerShadowVisible: false,
           headerBackButtonDisplayMode: "minimal",
         }}
       />

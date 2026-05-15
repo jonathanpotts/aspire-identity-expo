@@ -1,4 +1,5 @@
 {
+  "aspire.dashboardBrowser": "openExternalBrowser",
   "js/ts.preferences.preferTypeOnlyAutoImports": true,
   "[csharp]": {
     "editor.defaultFormatter": "csharpier.csharpier-vscode"
@@ -60,6 +61,6 @@
     "ListFooterComponentClassName",
     "ListHeaderComponentClassName"
   ],
-  "tailwindCSS.classFunctions": ["cva"],
+  "tailwindCSS.classFunctions": ["useResolveClassNames", "cva"],
   "tailwindCSS.lint.cssConflict": "ignore"
 }

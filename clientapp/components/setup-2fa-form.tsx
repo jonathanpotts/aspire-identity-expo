@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as Clipboard from "expo-clipboard";
 import * as Linking from "expo-linking";
-import { AlertCircleIcon, LoaderCircleIcon } from "lucide-react-native";
+import { AlertCircleIcon } from "lucide-react-native";
 import { Controller, useForm } from "react-hook-form";
 import { Platform, View } from "react-native";
 import QrCode from "react-qr-code";
@@ -15,10 +15,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Spinner } from "@/components/ui/spinner";
 import { Text } from "@/components/ui/text";
 import { toast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
@@ -93,7 +93,7 @@ export function Setup2faForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5">
+      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-start">
             Setup two-factor authentication
@@ -106,11 +106,11 @@ export function Setup2faForm({
         <CardContent className="gap-6">
           <View className="mx-auto w-64 gap-1.5">
             {hasData ? (
-              <View className="aspect-square items-center justify-center rounded-md border border-border bg-white shadow-sm shadow-black/5">
+              <View className="border-border aspect-square items-center justify-center rounded-md border bg-white shadow-sm shadow-black/5">
                 <QrCode size={224} value={url} />
               </View>
             ) : (
-              <Skeleton className="aspect-square rounded-md border border-border shadow-sm shadow-black/5" />
+              <Skeleton className="border-border aspect-square rounded-md border shadow-sm shadow-black/5" />
             )}
             {Platform.OS !== "web" && (
               <Button
@@ -124,20 +124,20 @@ export function Setup2faForm({
             )}
           </View>
           <View className="gap-1.5">
-            <Text className="text-sm text-muted-foreground">
+            <Text className="text-muted-foreground text-sm">
               Can&apos;t scan the QR code? Enter the following code in your
               authenticator app:
             </Text>
             {hasData ? (
-              <View className="rounded-md border border-border p-1 shadow-sm shadow-black/5">
-                <Text className="text-center font-mono slashed-zero tracking-widest">
+              <View className="border-border rounded-md border p-1 shadow-sm shadow-black/5">
+                <Text className="text-center font-mono tracking-widest slashed-zero">
                   {secretLine1}
                   {"\n"}
                   {secretLine2}
                 </Text>
               </View>
             ) : (
-              <Skeleton className="rounded-md border border-border p-1 shadow-sm shadow-black/5">
+              <Skeleton className="border-border rounded-md border p-1 shadow-sm shadow-black/5">
                 <Text className="select-none"> {"\n"} </Text>
               </Skeleton>
             )}
@@ -182,11 +182,7 @@ export function Setup2faForm({
                     onSubmitEditing={handleSubmit(onSubmit)}
                     returnKeyType="send"
                     submitBehavior="submit"
-                    aria-invalid={invalid}
-                    className={cn({
-                      "!dark:ring-destructive/40 !border-destructive !ring-destructive/20":
-                        invalid,
-                    })}
+                    invalid={invalid}
                   />
                   <View
                     className={cn({
@@ -197,7 +193,7 @@ export function Setup2faForm({
                       <Text
                         key={error.message}
                         role="alert"
-                        className="text-sm text-destructive"
+                        className="text-destructive text-sm"
                       >
                         {error.message}
                       </Text>
@@ -213,10 +209,7 @@ export function Setup2faForm({
             >
               {isPending ? (
                 <View className="flex-row items-center justify-center gap-2">
-                  <Icon
-                    as={LoaderCircleIcon}
-                    className="origin-center animate-spin motion-reduce:animate-none"
-                  />
+                  <Spinner />
                   <Text>Setting up...</Text>
                 </View>
               ) : (

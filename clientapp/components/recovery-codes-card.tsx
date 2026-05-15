@@ -28,7 +28,7 @@ export function RecoveryCodesCard({ codes, onDone }: RecoveryCodesCardProps) {
   }
   return (
     <View className="gap-6">
-      <Card className="border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5">
+      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-start">
             Recovery codes
@@ -41,10 +41,10 @@ export function RecoveryCodesCard({ codes, onDone }: RecoveryCodesCardProps) {
         </CardHeader>
         <CardContent className="gap-6">
           <View className="gap-1.5">
-            <View className="flex flex-row flex-wrap justify-center gap-6 rounded-md border border-border p-6 shadow-sm shadow-black/5">
+            <View className="border-border flex flex-row flex-wrap justify-center gap-6 rounded-md border p-6 shadow-sm shadow-black/5">
               {codes.map((code, index) => (
                 <View key={index}>
-                  <Text className="font-mono slashed-zero tracking-widest">
+                  <Text className="font-mono tracking-widest slashed-zero">
                     {code}
                   </Text>
                 </View>

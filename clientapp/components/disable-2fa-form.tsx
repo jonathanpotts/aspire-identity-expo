@@ -1,4 +1,4 @@
-import { AlertCircleIcon, LoaderCircleIcon } from "lucide-react-native";
+import { AlertCircleIcon } from "lucide-react-native";
 import { View } from "react-native";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
+import { Spinner } from "@/components/ui/spinner";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +28,7 @@ export function Disable2faForm({
 }: Disable2faFormProps) {
   return (
     <View className="gap-6">
-      <Card className="border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5">
+      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-start">
             Disable two-factor authentication
@@ -50,10 +50,7 @@ export function Disable2faForm({
             <Button className="w-full" onPress={onSubmit} disabled={isPending}>
               {isPending ? (
                 <View className="flex-row items-center justify-center gap-2">
-                  <Icon
-                    as={LoaderCircleIcon}
-                    className="origin-center animate-spin motion-reduce:animate-none"
-                  />
+                  <Spinner />
                   <Text>Disabling two-factor authentication...</Text>
                 </View>
               ) : (

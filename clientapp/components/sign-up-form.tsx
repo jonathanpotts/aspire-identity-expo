@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AlertCircleIcon, LoaderCircleIcon } from "lucide-react-native";
+import { AlertCircleIcon } from "lucide-react-native";
 import * as React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Pressable, TextInput, View } from "react-native";
@@ -14,9 +14,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Spinner } from "@/components/ui/spinner";
 // import { Separator } from "@/components/ui/separator";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
@@ -65,7 +65,7 @@ export function SignUpForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5">
+      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-start">
             Create your account
@@ -107,11 +107,7 @@ export function SignUpForm({
                     onSubmitEditing={onEmailSubmitEditing}
                     returnKeyType="next"
                     submitBehavior="submit"
-                    aria-invalid={invalid}
-                    className={cn({
-                      "!dark:ring-destructive/40 !border-destructive !ring-destructive/20":
-                        invalid,
-                    })}
+                    invalid={invalid}
                   />
                   <View
                     className={cn({
@@ -122,7 +118,7 @@ export function SignUpForm({
                       <Text
                         key={error.message}
                         role="alert"
-                        className="text-sm text-destructive"
+                        className="text-destructive text-sm"
                       >
                         {error.message}
                       </Text>
@@ -156,11 +152,7 @@ export function SignUpForm({
                     autoCorrect={false}
                     returnKeyType="send"
                     onSubmitEditing={handleSubmit(onSubmit)}
-                    aria-invalid={invalid}
-                    className={cn({
-                      "!dark:ring-destructive/40 !border-destructive !ring-destructive/20":
-                        invalid,
-                    })}
+                    invalid={invalid}
                   />
                   <View
                     className={cn({
@@ -171,7 +163,7 @@ export function SignUpForm({
                       <Text
                         key={error.message}
                         role="alert"
-                        className="text-sm text-destructive"
+                        className="text-destructive text-sm"
                       >
                         {error.message}
                       </Text>
@@ -187,10 +179,7 @@ export function SignUpForm({
             >
               {isPending ? (
                 <View className="flex-row items-center justify-center gap-2">
-                  <Icon
-                    as={LoaderCircleIcon}
-                    className="origin-center animate-spin motion-reduce:animate-none"
-                  />
+                  <Spinner />
                   <Text>Signing up...</Text>
                 </View>
               ) : (
@@ -199,7 +188,7 @@ export function SignUpForm({
             </Button>
           </View>
           <View className="mx-auto flex flex-row flex-wrap items-center gap-1">
-            <Text className="text-sm text-muted-foreground">
+            <Text className="text-muted-foreground text-sm">
               Already have an account?
             </Text>
             <Pressable onPress={onSignIn}>

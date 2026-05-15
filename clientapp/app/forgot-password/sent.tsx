@@ -22,7 +22,7 @@ export default function ForgotPasswordSentScreen() {
       >
         <View className="w-full max-w-sm">
           <View className="gap-6">
-            <Card className="border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5">
+            <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
               <CardHeader>
                 <CardTitle className="text-center text-xl sm:text-start">
                   Check your email

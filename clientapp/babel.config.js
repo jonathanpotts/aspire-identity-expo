@@ -3,10 +3,7 @@ module.exports = function (/** @type {import('@babel/core').ConfigAPI} */ api) {
 
   /** @type {import('@babel/core').TransformOptions} */
   const config = {
-    presets: [
-      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
-      "nativewind/babel",
-    ],
+    presets: [["babel-preset-expo"]],
   };
 
   return config;
