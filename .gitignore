@@ -419,3 +419,6 @@ FodyWeavers.xsd
 
 # Aspire output folder
 **/aspire-output/
+
+# C# Dev Kit (VS Code)
+*.csproj.lscache
