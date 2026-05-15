@@ -28,12 +28,12 @@ export function Disable2faForm({
 }: Disable2faFormProps) {
   return (
     <View className="gap-6">
-      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-start">
+          <CardTitle className="text-xl">
             Disable two-factor authentication
           </CardTitle>
-          <CardDescription className="text-center sm:text-start">
+          <CardDescription>
             Your account will be less secure. You&apos;ll need to set up an
             authenticator app again if you re-enable it
           </CardDescription>

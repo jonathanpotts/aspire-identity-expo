@@ -50,12 +50,10 @@ export function SignIn2faRecoveryCodeForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-start">
-            Use a recovery code
-          </CardTitle>
-          <CardDescription className="text-center sm:text-start">
+          <CardTitle className="text-xl">Use a recovery code</CardTitle>
+          <CardDescription>
             Please enter your recovery code to continue
           </CardDescription>
         </CardHeader>

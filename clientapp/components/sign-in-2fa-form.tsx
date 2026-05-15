@@ -55,12 +55,10 @@ export function SignIn2faForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-start">
-            Two-factor authentication
-          </CardTitle>
-          <CardDescription className="text-center sm:text-start">
+          <CardTitle className="text-xl">Two-factor authentication</CardTitle>
+          <CardDescription>
             Please enter the code from your authenticator app to continue
           </CardDescription>
         </CardHeader>

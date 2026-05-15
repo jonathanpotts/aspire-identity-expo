@@ -28,12 +28,10 @@ export function RecoveryCodesCard({ codes, onDone }: RecoveryCodesCardProps) {
   }
   return (
     <View className="gap-6">
-      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-start">
-            Recovery codes
-          </CardTitle>
-          <CardDescription className="text-center sm:text-start">
+          <CardTitle className="text-xl">Recovery codes</CardTitle>
+          <CardDescription>
             You&apos;ll only see these once, so store them somewhere safe. Use
             one to sign in if you lose access to your authenticator app. Each
             code can only be used once

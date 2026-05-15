@@ -47,12 +47,10 @@ export function ChangeEmailForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-start">
-            Change email
-          </CardTitle>
-          <CardDescription className="text-center sm:text-start">
+          <CardTitle className="text-xl">Change email</CardTitle>
+          <CardDescription>
             Please fill in the details to update your email. We&apos;ll send a
             verification link to the new address before the change takes effect
           </CardDescription>

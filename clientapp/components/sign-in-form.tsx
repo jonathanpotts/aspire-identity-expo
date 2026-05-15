@@ -58,12 +58,10 @@ export function SignInForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-start">
-            Sign in to your app
-          </CardTitle>
-          <CardDescription className="text-center sm:text-start">
+          <CardTitle className="text-xl">Sign in to your app</CardTitle>
+          <CardDescription>
             Welcome back! Please sign in to continue
           </CardDescription>
         </CardHeader>

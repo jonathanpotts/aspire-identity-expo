@@ -93,12 +93,10 @@ export function ResetPasswordForm({
 
   return (
     <View className="gap-6">
-      <Card className="border-border/0 sm:border-border shadow-none sm:shadow-sm sm:shadow-black/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-start">
-            Reset password
-          </CardTitle>
-          <CardDescription className="text-center sm:text-start">
+          <CardTitle className="text-xl">Reset password</CardTitle>
+          <CardDescription>
             Please fill in the details to reset your password
           </CardDescription>
         </CardHeader>
