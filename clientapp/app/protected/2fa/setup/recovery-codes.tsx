@@ -1,4 +1,4 @@
-import { Redirect, Stack, useFocusEffect } from "expo-router";
+import { Redirect, router, Stack, useFocusEffect } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback } from "react";
 import { ScrollView, View } from "react-native";
@@ -24,6 +24,7 @@ export default function RecoveryCodesScreen() {
       title:
         "Two-factor authentication enabled! Please sign in again to continue.",
     });
+    router.replace("/sign-in");
     await signOut();
   }
 

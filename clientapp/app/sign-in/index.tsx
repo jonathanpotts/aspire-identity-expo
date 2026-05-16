@@ -43,10 +43,6 @@ export default function SignInScreen() {
     },
   });
 
-  if (isSignedIn && !isPending) {
-    return <Redirect href="/protected" />;
-  }
-
   function handleForgotPassword() {
     router.push("/forgot-password");
   }
