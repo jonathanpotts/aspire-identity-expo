@@ -15,7 +15,7 @@ export default function Setup2faScreen() {
   const { data } = useQuery({
     queryKey: ["2fa"],
     queryFn: () => getTwoFactor(),
-    enabled: !!session,
+    enabled: session !== null,
   });
 
   const queryClient = useQueryClient();

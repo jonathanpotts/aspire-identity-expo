@@ -54,7 +54,7 @@ export function Setup2faForm({
   isError,
   error,
 }: SetupTwoFactorFormProps) {
-  const hasData = !!email && !!sharedKey;
+  const hasData = Boolean(email) && Boolean(sharedKey);
   const encodedEmail = email ? encodeURIComponent(email) : undefined;
   const url = `otpauth://totp/${ISSUER}:${encodedEmail}?secret=${sharedKey}&issuer=${ISSUER}`;
 

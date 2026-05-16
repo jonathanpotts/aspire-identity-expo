@@ -72,8 +72,8 @@ export function ResetPasswordForm({
     codeInputRef.current?.focus();
   }
 
-  const hasEmail = !!email;
-  const hasResetCode = !!resetCode;
+  const hasEmail = Boolean(email);
+  const hasResetCode = Boolean(resetCode);
 
   const formSchema = React.useMemo(
     () => createFormSchema(hasEmail, hasResetCode),

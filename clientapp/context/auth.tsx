@@ -295,9 +295,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     <AuthContext.Provider
       value={{
         session,
-        isSignedIn: !!session,
+        isSignedIn: session !== null,
         isLoading,
-        isPendingSignIn: !!pendingSignIn,
+        isPendingSignIn: pendingSignIn !== null,
         recoveryCodes,
         signIn,
         signInWithTwoFactor,
