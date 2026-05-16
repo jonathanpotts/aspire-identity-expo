@@ -62,10 +62,10 @@ export default function HomeScreen() {
             <Badge variant="secondary" className="self-start">
               <Text>Aspire + ASP.NET Core Identity + Expo</Text>
             </Badge>
-            <Text variant="h1" className="text-left">
+            <Text variant="h1" className="text-start">
               A place to start.
             </Text>
-            <Text variant="lead" className="text-left">
+            <Text variant="lead" className="text-start">
               A full-stack reference app for authentication and account
               management with React Native and ASP.NET Core.
             </Text>
