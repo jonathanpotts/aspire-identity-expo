@@ -42,7 +42,7 @@ export default function TwoFactorScreen() {
               style={{ pointerEvents: "none" }}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "overflow-hidden py-6",
+                "h-auto! overflow-hidden py-4",
               )}
             >
               <Skeleton className="absolute inset-0" />
