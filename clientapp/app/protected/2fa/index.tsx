@@ -7,12 +7,12 @@ import {
   ShieldOffIcon,
 } from "lucide-react-native";
 import { ScrollView, View } from "react-native";
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { List } from "@/components/ui/list";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Text } from "@/components/ui/text";
 import { useAuth } from "@/context/auth";
 import { getTwoFactor } from "@/lib/api/auth";
-import { cn } from "@/lib/utils";
 
 export default function TwoFactorScreen() {
   const { session } = useAuth();
@@ -20,7 +20,7 @@ export default function TwoFactorScreen() {
   const { data } = useQuery({
     queryKey: ["2fa"],
     queryFn: () => getTwoFactor(),
-    enabled: !!session,
+    enabled: session !== null,
   });
 
   const isEnabled = data?.isTwoFactorEnabled;
@@ -38,15 +38,16 @@ export default function TwoFactorScreen() {
       >
         <View className="w-full max-w-sm gap-6">
           {!data ? (
-            <View
+            <Button
+              variant="outline"
+              size="lg"
               style={{ pointerEvents: "none" }}
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "h-auto! overflow-hidden py-4",
-              )}
+              className="h-auto! overflow-hidden py-4 opacity-100"
+              disabled={true}
             >
+              <Text> </Text>
               <Skeleton className="absolute inset-0" />
-            </View>
+            </Button>
           ) : (
             <List
               sections={[

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Platform, View } from "react-native";
-import {
+import Animated, {
   Easing,
   useAnimatedStyle,
   useSharedValue,
@@ -8,12 +8,12 @@ import {
   withTiming,
 } from "react-native-reanimated";
 import { cn } from "@/lib/utils";
-import { NativeOnlyAnimatedView } from "./native-only-animated-view";
 
 const duration = 1000;
 
 function Skeleton({
   className,
+  style,
   ...props
 }: React.ComponentProps<typeof View> & React.RefAttributes<View>) {
   const sv = useSharedValue(1);
@@ -26,23 +26,32 @@ function Skeleton({
     );
   }, [sv]);
 
-  const style = useAnimatedStyle(
+  const animatedStyle = useAnimatedStyle(
     () => ({
       opacity: sv.value,
     }),
     [sv],
   );
-  return (
-    <NativeOnlyAnimatedView style={style}>
+
+  if (Platform.OS === "web") {
+    return (
       <View
         className={cn(
-          "bg-secondary dark:bg-muted rounded-md",
-          Platform.select({ web: "animate-pulse motion-reduce:animate-none" }),
+          "bg-secondary dark:bg-muted animate-pulse rounded-md motion-reduce:animate-none",
           className,
         )}
+        style={style}
         {...props}
       />
-    </NativeOnlyAnimatedView>
+    );
+  }
+
+  return (
+    <Animated.View
+      className={cn("bg-secondary dark:bg-muted rounded-md", className)}
+      style={[animatedStyle, style]}
+      {...props}
+    />
   );
 }
 
