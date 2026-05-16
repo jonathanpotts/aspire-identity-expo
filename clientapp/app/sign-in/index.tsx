@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { Redirect, router, Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import Head from "expo-router/head";
 import { ScrollView, View } from "react-native";
 import { SignInForm } from "@/components/sign-in-form";
@@ -8,7 +8,7 @@ import { FailedLoginError, RequiresTwoFactorError } from "@/lib/api/auth";
 import { ensureMinDuration } from "@/lib/utils";
 
 export default function SignInScreen() {
-  const { signIn, isSignedIn } = useAuth();
+  const { signIn } = useAuth();
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: async ({
