@@ -62,5 +62,8 @@
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "~5.9.3"
   },
-  "private": true
+  "private": true,
+  "allowScripts": {
+    "unrs-resolver@1.11.1": true
+  }
 }
