@@ -17,6 +17,9 @@ export default function TwoFactorSignInScreen() {
     clearPendingSignIn,
   } = useAuth();
 
+  const isPendingSignInRef = useRef(isPendingSignIn);
+  const skipClearPendingSignInRef = useRef(false);
+
   useFocusEffect(
     useCallback(() => {
       return () => {
@@ -43,9 +46,6 @@ export default function TwoFactorSignInScreen() {
       router.replace("/protected");
     },
   });
-
-  const isPendingSignInRef = useRef(isPendingSignIn);
-  const skipClearPendingSignInRef = useRef(false);
 
   useEffect(() => {
     if (!isPendingSignInRef.current) {
