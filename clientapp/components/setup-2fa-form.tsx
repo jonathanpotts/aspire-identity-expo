@@ -93,12 +93,12 @@ export function Setup2faForm({
 
   return (
     <View className="gap-6">
-      <Card>
+      <Card className="border-border/0 sm:border-border sm:bg-card bg-transparent shadow-none sm:shadow-sm sm:shadow-black/5">
         <CardHeader>
-          <CardTitle className="text-xl">
+          <CardTitle className="text-center text-xl sm:text-left">
             Setup two-factor authentication
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-center sm:text-left">
             Please scan the QR code below and enter the code from your
             authenticator app
           </CardDescription>

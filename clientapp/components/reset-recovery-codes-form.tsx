@@ -28,10 +28,12 @@ export function ResetRecoveryCodesForm({
 }: ResetRecoveryCodesFormProp) {
   return (
     <View className="gap-6">
-      <Card>
+      <Card className="border-border/0 sm:border-border sm:bg-card bg-transparent shadow-none sm:shadow-sm sm:shadow-black/5">
         <CardHeader>
-          <CardTitle className="text-xl">Reset recovery codes</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-center text-xl sm:text-left">
+            Reset recovery codes
+          </CardTitle>
+          <CardDescription className="text-center sm:text-left">
             Generate a new set of recovery codes. Your current codes will no
             longer work once you reset them
           </CardDescription>
