@@ -1,5 +1,4 @@
-import { router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { router } from "expo-router";
 import {
   AtSignIcon,
   KeyRoundIcon,
@@ -10,6 +9,7 @@ import {
 } from "lucide-react-native";
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
+import { Screen } from "@/components/screen";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -49,10 +49,7 @@ export default function ProtectedScreen() {
 
   return (
     <>
-      <Head>
-        <title>Account</title>
-      </Head>
-      <Stack.Screen options={{ title: "Account" }} />
+      <Screen options={{ title: "Account" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="items-center p-4 py-8 sm:py-6 sm:p-6"

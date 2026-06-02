@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
-import { Stack, useLocalSearchParams } from "expo-router";
-import Head from "expo-router/head";
+import { useLocalSearchParams } from "expo-router";
 import { ScrollView, View } from "react-native";
 import { ResetPasswordForm } from "@/components/reset-password-form";
+import { Screen } from "@/components/screen";
 import { useAuth } from "@/context/auth";
 import { resetPassword } from "@/lib/api/auth";
 import { ensureMinDuration } from "@/lib/utils";
@@ -33,10 +33,7 @@ export default function ResetPasswordScreen() {
 
   return (
     <>
-      <Head>
-        <title>Reset password</title>
-      </Head>
-      <Stack.Screen options={{ title: "Reset password" }} />
+      <Screen options={{ title: "Reset password" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

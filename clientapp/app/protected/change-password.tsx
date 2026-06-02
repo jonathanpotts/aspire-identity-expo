@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
-import { router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { router } from "expo-router";
 import { ScrollView, View } from "react-native";
 import { ChangePasswordForm } from "@/components/change-password-form";
+import { Screen } from "@/components/screen";
 import { toast } from "@/hooks/use-toast";
 import { updateInfo } from "@/lib/api/auth";
 import { ensureMinDuration } from "@/lib/utils";
@@ -30,10 +30,7 @@ export default function ChangePasswordScreen() {
 
   return (
     <>
-      <Head>
-        <title>Change password</title>
-      </Head>
-      <Stack.Screen options={{ title: "Change password" }} />
+      <Screen options={{ title: "Change password" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

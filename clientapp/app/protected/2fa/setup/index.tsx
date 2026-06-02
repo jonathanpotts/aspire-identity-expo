@@ -1,8 +1,8 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { router } from "expo-router";
 import { useEffect } from "react";
 import { ScrollView, View } from "react-native";
+import { Screen } from "@/components/screen";
 import { Setup2faForm } from "@/components/setup-2fa-form";
 import { useAuth } from "@/context/auth";
 import { toast } from "@/hooks/use-toast";
@@ -40,10 +40,7 @@ export default function Setup2faScreen() {
 
   return (
     <>
-      <Head>
-        <title>Setup two-factor authentication</title>
-      </Head>
-      <Stack.Screen options={{ title: "Setup two-factor authentication" }} />
+      <Screen options={{ title: "Setup two-factor authentication" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

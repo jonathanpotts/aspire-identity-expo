@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
-import { Redirect, router, Stack, useFocusEffect } from "expo-router";
-import Head from "expo-router/head";
+import { Redirect, router, useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useRef } from "react";
 import { ScrollView, View } from "react-native";
+import { Screen } from "@/components/screen";
 import { SignIn2faRecoveryCodeForm } from "@/components/sign-in-2fa-recovery-code-form";
 import { useAuth } from "@/context/auth";
 import { toast } from "@/hooks/use-toast";
@@ -61,10 +61,7 @@ export default function TwoFactorRecoveryCodeSignInScreen() {
 
   return (
     <>
-      <Head>
-        <title>Use a recovery code</title>
-      </Head>
-      <Stack.Screen options={{ title: "Use a recovery code" }} />
+      <Screen options={{ title: "Use a recovery code" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

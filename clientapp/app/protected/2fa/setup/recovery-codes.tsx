@@ -1,8 +1,8 @@
-import { Redirect, router, Stack, useFocusEffect } from "expo-router";
-import Head from "expo-router/head";
+import { Redirect, router, useFocusEffect } from "expo-router";
 import { useCallback } from "react";
 import { ScrollView, View } from "react-native";
 import { RecoveryCodesCard } from "@/components/recovery-codes-card";
+import { Screen } from "@/components/screen";
 import { useAuth } from "@/context/auth";
 import { toast } from "@/hooks/use-toast";
 
@@ -30,10 +30,7 @@ export default function RecoveryCodesScreen() {
 
   return (
     <>
-      <Head>
-        <title>Recovery codes</title>
-      </Head>
-      <Stack.Screen options={{ title: "Recovery codes" }} />
+      <Screen options={{ title: "Recovery codes" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

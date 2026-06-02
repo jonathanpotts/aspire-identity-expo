@@ -1,11 +1,12 @@
-import { Link, Stack } from "expo-router";
+import { Link } from "expo-router";
 import { View } from "react-native";
+import { Screen } from "@/components/screen";
 import { Text } from "@/components/ui/text";
 
 export default function NotFoundScreen() {
   return (
     <>
-      <Stack.Screen options={{ title: "Oops!" }} />
+      <Screen options={{ title: "Oops!" }} />
       <View>
         <Text>This screen doesn&apos;t exist.</Text>
 

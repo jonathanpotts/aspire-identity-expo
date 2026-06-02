@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
-import { Redirect, router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { Redirect, router } from "expo-router";
 import { ScrollView, View } from "react-native";
 import { ForgotPasswordForm } from "@/components/forgot-password-form";
+import { Screen } from "@/components/screen";
 import { useAuth } from "@/context/auth";
 import { forgotPassword } from "@/lib/api/auth";
 import { ensureMinDuration } from "@/lib/utils";
@@ -24,10 +24,7 @@ export default function ForgotPasswordScreen() {
 
   return (
     <>
-      <Head>
-        <title>Forgot password?</title>
-      </Head>
-      <Stack.Screen options={{ title: "Forgot password?" }} />
+      <Screen options={{ title: "Forgot password?" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

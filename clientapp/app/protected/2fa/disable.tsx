@@ -1,8 +1,8 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { router } from "expo-router";
 import { ScrollView, View } from "react-native";
 import { Disable2faForm } from "@/components/disable-2fa-form";
+import { Screen } from "@/components/screen";
 import { toast } from "@/hooks/use-toast";
 import { updateTwoFactor } from "@/lib/api/auth";
 import { ensureMinDuration } from "@/lib/utils";
@@ -30,10 +30,7 @@ export default function DisableTwoFactorScreen() {
 
   return (
     <>
-      <Head>
-        <title>Disable two-factor authentication</title>
-      </Head>
-      <Stack.Screen options={{ title: "Disable two-factor authentication" }} />
+      <Screen options={{ title: "Disable two-factor authentication" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"

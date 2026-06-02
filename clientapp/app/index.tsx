@@ -1,5 +1,4 @@
-import { Redirect, router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { Redirect, router } from "expo-router";
 import {
   FingerprintIcon,
   KeyRoundIcon,
@@ -7,6 +6,7 @@ import {
   SmartphoneIcon,
 } from "lucide-react-native";
 import { ScrollView, View } from "react-native";
+import { Screen } from "@/components/screen";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
@@ -47,10 +47,7 @@ export default function HomeScreen() {
 
   return (
     <>
-      <Head>
-        <title>Home</title>
-      </Head>
-      <Stack.Screen options={{ title: "Home", headerShown: false }} />
+      <Screen options={{ title: "Home", headerShown: false }} webTitle="" />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="items-center p-6 pt-16 pb-12 sm:p-10"

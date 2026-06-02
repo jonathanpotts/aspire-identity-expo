@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { router } from "expo-router";
 import {
   KeyRoundIcon,
   ShieldCheckIcon,
   ShieldOffIcon,
 } from "lucide-react-native";
 import { ScrollView, View } from "react-native";
+import { Screen } from "@/components/screen";
 import { Button } from "@/components/ui/button";
 import { List } from "@/components/ui/list";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -27,10 +27,7 @@ export default function TwoFactorScreen() {
 
   return (
     <>
-      <Head>
-        <title>Two-factor authentication</title>
-      </Head>
-      <Stack.Screen options={{ title: "Two-factor authentication" }} />
+      <Screen options={{ title: "Two-factor authentication" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="items-center p-4 py-8 sm:py-6 sm:p-6"

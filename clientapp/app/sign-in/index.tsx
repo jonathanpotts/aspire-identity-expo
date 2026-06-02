@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
-import { router, Stack } from "expo-router";
-import Head from "expo-router/head";
+import { router } from "expo-router";
 import { ScrollView, View } from "react-native";
+import { Screen } from "@/components/screen";
 import { SignInForm } from "@/components/sign-in-form";
 import { useAuth } from "@/context/auth";
 import { FailedLoginError, RequiresTwoFactorError } from "@/lib/api/auth";
@@ -53,10 +53,7 @@ export default function SignInScreen() {
 
   return (
     <>
-      <Head>
-        <title>Sign in to your app</title>
-      </Head>
-      <Stack.Screen options={{ title: "Sign in" }} />
+      <Screen options={{ title: "Sign in" }} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerClassName="sm:flex-1 items-center justify-center p-4 py-8 sm:py-4 sm:p-6"
