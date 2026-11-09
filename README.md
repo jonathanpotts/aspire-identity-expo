@@ -16,6 +16,9 @@ This project requires the following:
 
 ## 🚀 Running
 
+> [!NOTE]
+> Podman requires additional configuration. See the [Aspire prerequisites](https://aspire.dev/get-started/prerequisites/) for setup instructions.
+
 To run this project, do the following:
 
 1. Start Docker Desktop or Podman if it is not already running
@@ -32,8 +35,8 @@ An [Aspire AppHost](https://aspire.dev/get-started/app-host/) which handles orch
 
 **Uses:**
 
-- **[Aspire.Hosting.PostgreSQL](https://aspire.dev/integrations/databases/postgres/postgres-host/)** - Handles starting up the PostgreSQL container (with pgAdmin) and providing the database to the API service
 - **[Aspire.Hosting.JavaScript](https://aspire.dev/integrations/frameworks/javascript/)** - Handles launching and configuring the Expo frontend
+- **[Aspire.Hosting.PostgreSQL](https://aspire.dev/integrations/databases/postgres/postgres-host/)** - Handles starting up the PostgreSQL container (with pgAdmin) and providing the database to the API service
 
 ### AspireIdentityExpo.ApiService
 
@@ -68,10 +71,10 @@ An Expo frontend supporting web, iOS, and Android that authenticates users via t
 **Uses:**
 
 - **[Expo](https://expo.dev/) + [Expo Router](https://docs.expo.dev/router/introduction/)** - Provides the [React Native](https://reactnative.dev/) app framework and file-based routing
-- **[Uniwind](https://uniwind.dev/)** - Applies [Tailwind CSS](https://tailwindcss.com/) styles to React Native components
+- **[expo-secure-store](https://docs.expo.dev/versions/latest/sdk/securestore/)** - Persists auth tokens securely on native platforms
+- **[Lucide React Native](https://lucide.dev/)** - Provides icons
+- **[React Hook Form](https://react-hook-form.com/)** + **[Zod](https://zod.dev/)** - Manages form state and validation
 - **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)** - Provides smooth, performant animations and transitions
 - **[React Native Reusables](https://reactnativereusables.com/)** - Provides [shadcn/ui](https://ui.shadcn.com/)-inspired universal components for React Native
 - **[TanStack Query](https://tanstack.com/query/)** - Handles server state and data fetching
-- **[React Hook Form](https://react-hook-form.com/)** + **[Zod](https://zod.dev/)** - Manages form state and validation
-- **[expo-secure-store](https://docs.expo.dev/versions/latest/sdk/securestore/)** - Persists auth tokens securely on native platforms
-- **[Lucide React Native](https://lucide.dev/)** - Provides icons
+- **[Uniwind](https://uniwind.dev/)** - Applies [Tailwind CSS](https://tailwindcss.com/) styles to React Native components
